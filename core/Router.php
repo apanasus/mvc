@@ -6,10 +6,10 @@ class Router
 {
     public function run()
     {
-        $controllerName = 'Home';
+        $controllerName = 'HomeController';
         $actionName = 'index';
 
-        $uri = trim($_SERVER['REQUEST_URI'], '/');
+        $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
         if ($uri) {
             $segments = explode('/', $uri);

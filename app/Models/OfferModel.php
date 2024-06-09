@@ -37,4 +37,15 @@ class OfferModel extends Model
             echo "Error: " . $e->getMessage() . "<br>";
         }
     }
+    public function offerExists($offerId)
+    {
+        try {
+            $stmt = $this->db->prepare("SELECT COUNT(*) as count FROM offers WHERE id = ?");
+            $stmt->execute([$offerId]);
+            $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $result['count'] > 0;
+        } catch (\PDOException $e) {
+            echo "Error: " . $e->getMessage() . "<br>";
+        }
+    }
 }

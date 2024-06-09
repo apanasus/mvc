@@ -30,11 +30,12 @@ class ComposerStaticInite697fe801afd04b5fb5c4061c662f14e
 
     public static $classMap = array (
         'App\\Controllers\\AddOfferController' => __DIR__ . '/../..' . '/app/Controllers/AddOfferController.php',
-        'App\\Controllers\\ClickController' => __DIR__ . '/../..' . '/app/Controllers/ClickController.php',
+        'App\\Controllers\\ClicksController' => __DIR__ . '/../..' . '/app/Controllers/ClicksController.php',
         'App\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Controllers/HomeController.php',
-        'App\\Controllers\\OfferController' => __DIR__ . '/../..' . '/app/Controllers/OfferController.php',
+        'App\\Controllers\\OffersController' => __DIR__ . '/../..' . '/app/Controllers/OffersController.php',
+        'App\\Controllers\\TrackerController' => __DIR__ . '/../..' . '/app/Controllers/TrackerController.php',
+        'App\\Models\\ClickModel' => __DIR__ . '/../..' . '/app/Models/ClickModel.php',
         'App\\Models\\OfferModel' => __DIR__ . '/../..' . '/app/Models/OfferModel.php',
-        'App\\Models\\UserModel' => __DIR__ . '/../..' . '/app/Models/UserModel.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Core\\Controller' => __DIR__ . '/../..' . '/core/Controller.php',
         'Core\\Model' => __DIR__ . '/../..' . '/core/Model.php',
