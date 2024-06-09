@@ -29,13 +29,8 @@ class AddOfferController extends Controller
                 $targetPath = "../public/uploads/" . $imageName;
 
                 if (move_uploaded_file($image['tmp_name'], $targetPath)) {
-                    echo "File uploaded successfully.<br>";
                     $offerModel->addOffer($name, $url, $imageName);
-                } else {
-                    echo "Failed to upload file.<br>";
                 }
-            } else {
-                echo "Invalid image file.<br>";
             }
         }
 
@@ -46,7 +41,18 @@ class AddOfferController extends Controller
     public function delete($id)
     {
         $offerModel = new OfferModel();
-        $offerModel->deleteOffer($id);
+        $offer = $offerModel->getOfferById($id);
+
+        if ($offer) {
+            $imagePath = "../public/uploads/" . $offer['image'];
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+
+            $offerModel->deleteOffer($id);
+        }
+
         header("Location: /add_offer");
+        exit;
     }
 }
