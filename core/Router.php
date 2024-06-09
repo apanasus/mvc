@@ -2,6 +2,7 @@
 namespace Core;
 
 class Router{
+    
     public function run(){
         $controllerName = 'Home';
         $actionName ='index';
