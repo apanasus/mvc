@@ -6,9 +6,11 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controllers\\AddOfferController' => $baseDir . '/app/Controllers/AddOfferController.php',
     'App\\Controllers\\ClickController' => $baseDir . '/app/Controllers/ClickController.php',
     'App\\Controllers\\HomeController' => $baseDir . '/app/Controllers/HomeController.php',
     'App\\Controllers\\OfferController' => $baseDir . '/app/Controllers/OfferController.php',
+    'App\\Models\\OfferModel' => $baseDir . '/app/Models/OfferModel.php',
     'App\\Models\\UserModel' => $baseDir . '/app/Models/UserModel.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Core\\Controller' => $baseDir . '/core/Controller.php',

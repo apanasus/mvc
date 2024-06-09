@@ -13,15 +13,18 @@ class Router
 
         if ($uri) {
             $segments = explode('/', $uri);
-            $controllerName = ucfirst(array_shift($segments));
-            $actionName = array_shift($segments) ?: 'index'; // Default to 'index' if no action is specified
+            $controllerName = ucfirst(str_replace('_', '', array_shift($segments))) . 'Controller';
+            $actionName = array_shift($segments) ?: 'index';
+            $params = $segments;
+        } else {
+            $params = [];
         }
 
-        $controllerClass = "\\App\\Controllers\\{$controllerName}Controller";
+        $controllerClass = "\\App\\Controllers\\{$controllerName}";
         if (class_exists($controllerClass)) {
             $controller = new $controllerClass();
             if (method_exists($controller, $actionName)) {
-                call_user_func_array([$controller, $actionName], []);
+                call_user_func_array([$controller, $actionName], $params);
             } else {
                 echo "Action {$actionName} not found";
             }
