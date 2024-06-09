@@ -50,7 +50,7 @@ CREATE TABLE `clicks` (
   INDEX (`created_at`),
   FOREIGN KEY (`offer_id`) REFERENCES `offers`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+    ```
 
 
 
