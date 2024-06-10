@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Витрина</title>
@@ -50,17 +50,22 @@
         <?php foreach ($offers as $offer): ?>
             <div class="card">
             <div class="card-header">
-                    <img src="/uploads/<?php echo $offer['image']; ?>" alt="<?php echo $offer['name']; ?>" class="img-thumbnail mr-3" style="width:100px; height:100px;">
-                    <span class="rating">5.0</span>
-                <div class="stars">
-                    ★★★★★
+                    <img src="/uploads/<?php echo $offer['image']; ?>" alt="<?php echo $offer['name']; ?>" class="img-thumbnail mr-3">
+                <div class="label">
+                    <img src="/img/svgexport-4.svg" alt="">
                 </div>
             </div>
+            <div class="card-stars"> 
+                    <span class="rating">5.0</span>
+                    <div class="stars">
+                        ★★★★★
+                     </div>
+            </div>
                 <div class="card-content">
-                    <h2><?php echo $offer['name']; ?></h2>
-                    <p>Сумма: 30 000 ₽</p>
-                    <p>Первый займ: бесплатно</p>
-                    <p>Срок: 20 дней</p>
+                    <p>Сумма: <span class="summ">30 000 ₽</span></p>
+                    <p>Первый займ: <span><b>бесплатно</b></span></p>
+                    <p>Срок: <span><b>20 дней</b></span></p>
+                    <p class="license">Лиц. №2110552000304</p>
                     <a href="/tracker?utm_source=<?php echo urlencode($source); ?>&offer_id=<?php echo $offer['id']; ?>">Получить деньги</a>
             </div>
         </div>
