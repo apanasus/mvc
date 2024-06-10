@@ -1,6 +1,7 @@
 <?
-return[
-    'dsn' => 'mysql:host=localhost;dbname=mvc_project',
+return [
+    'dsn' => 'mysql:host=db;dbname=mvc_project',
     'username' => 'root',
-    'password' => '',
+    'password' => 'example_root_password',
 ];
+
